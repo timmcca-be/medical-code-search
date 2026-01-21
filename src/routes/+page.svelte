@@ -7,7 +7,7 @@
 	const index = new FlexSearch.Index({ tokenize: 'forward' });
 	const map: Record<string, string> = {};
 	codes.forEach((code) => {
-		index.add(code.code, code.description);
+		index.add(code.code, `${code.code} ${code.description}`);
 		map[code.code] = code.description;
 	});
 
@@ -30,6 +30,6 @@
 
 <ul>
 	{#each results as result}
-		<li>{result}: {map[result]}</li>
+		<li style="margin-bottom: 4px">{result}: {map[result]}</li>
 	{/each}
 </ul>

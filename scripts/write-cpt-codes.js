@@ -9,7 +9,7 @@ const allLines = fs
 const headerLineIndex = allLines.findIndex((line) => line.includes('\t'));
 const headers = allLines[headerLineIndex].split('\t');
 const cptCodeIndex = headers.indexOf('CPT Code');
-const descriptionIndex = headers.indexOf('Consumer');
+const descriptionIndex = headers.indexOf('Long');
 const codes = allLines.slice(headerLineIndex + 1).map((line) => {
 	const fields = line.split('\t');
 	return {
